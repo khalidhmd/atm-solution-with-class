@@ -1,8 +1,9 @@
 class ATM():
-    def __init__(self, balance, bank_name):
+    def __init__(self, balance, bank_name, BANK_NOTE_VALUES = [100, 50, 20, 10, 5, 1]):
         self.withdrawal_list = []
         self.balance = balance
         self.bank_name = bank_name
+        self.BANK_NOTE_VALUES = BANK_NOTE_VALUES
 
     def is_valid_operation(self, request):
         result = False
@@ -30,11 +31,10 @@ class ATM():
             print withdrawal
 
     def withdraw(self, request):
-        BANK_NOTE_VALUES = [100, 50, 20, 10, 5, 1]
         self.print_welcom()
         if self.is_valid_operation(request):
             self.withdrawal_list.append(request)
-            for value in BANK_NOTE_VALUES:
+            for value in self.BANK_NOTE_VALUES:
                 while request >= value:
                     self.output_msg(value)
                     request -= value
