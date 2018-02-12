@@ -1,6 +1,6 @@
 # One comment to test .gitignore
 class ATM():
-    def __init__(self, balance, bank_name, bank_note_values = [100, 50, 20, 10, 5, 1]):
+    def __init__(self, balance, bank_name, bank_note_values = [200, 100, 50, 20, 10, 5, 1]):
         self.withdrawal_list = []
         self.balance = balance
         self.bank_name = bank_name
